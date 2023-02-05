@@ -479,7 +479,7 @@ function isEligible(event) {
       }
       ```
     
-- Step 28: Create a new folder Password Generator. Inside that folder, create three files - 
+- Step 28: Create a new folder named Password Generator. Inside that folder, create three files - 
 
    - html file
    - css file (link your css file to your html page)
