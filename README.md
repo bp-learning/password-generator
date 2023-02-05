@@ -11,7 +11,7 @@ You can use [VS Code](https://code.visualstudio.com/) also.
 
 - Step 3: Update the html file to create a mock like the below image.
 
-![](./image1.PNG)
+![](./images/image1.PNG)
 
 
 ```html
