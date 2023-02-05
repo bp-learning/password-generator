@@ -185,7 +185,7 @@ para.innerHTML = `You clicked ${this.innerHTML}!`;
 
 - Step 17: Check your output.
 
-![](./image2.PNG)
+![](./images/image2.PNG)
 
 - Step 18: Calling a function when a button is clicked and getting content inside an element:
 ```html
@@ -289,7 +289,7 @@ function myFunction() {
 
    Try creating a simple form like the below image:
 
-   ![](./image3.PNG)
+   ![](./images/image3.PNG)
 
    ```html
     <form id="form">
@@ -405,7 +405,7 @@ function isEligible(event) {
     para.innerHTML = value;
 }
 ```
-![](./image4.PNG)
+![](./images/image4.PNG)
 
 - Step 25: Generating Random Numbers in javascript
 
