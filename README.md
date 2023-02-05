@@ -409,7 +409,75 @@ function isEligible(event) {
 
 - Step 25: Generating Random Numbers in javascript
 
+   - Math.random() returns a random number between 0 (inclusive) and 1 (exclusive)
+   ```js
+   const x = Math.random();
+   console.log(x);
+   ```
+   - Return a random number between 0 and 10
+   ```js
+   const x = Math.random() * 10;
+   console.log(x);
+   ```
+   - Return a random whole number between 1 and 10
+   ```js
+   const x = Math.floor((Math.random() * 10) + 1);
+   console.log(x);
+   ```
+   Math.floor(x)      //Returns x rounded down to its nearest integer
 
+- Step 26: Understanding ASCII code and some methods
+
+  - **ASCII** is a numeric value that is given to different characters and symbols for computers to store and manipulate. 
+
+  - Getting ASCII code for characters
+
+      The *charCodeAt()* method returns the ASCII code of the character at a specified index (position) in a string.
+
+    The index of the first character is 0, the second is 1, ...
+    ```js
+    "HELLO WORLD".charCodeAt(0);
+     >> 72    // returns ASCII code for H
+    ```
+
+  - Every number can also be converted into char
+
+    ```js
+    String.fromCharCode(65);
+     >> 'A'
+    ```
+
+- Step 27: Try creating four different functions 
+
+    - Function to generate random lowercase letters
+
+      ```js
+      function getRandomLower(){
+          return String.fromCharCode(Math.floor(Math.random() * 26) + 97)
+      }
+      ```
+    - Function to generate random uppercase letters
+
+      ```js
+      function getRandomUpper(){
+          return String.fromCharCode(Math.floor(Math.random() * 26) + 65)
+      }
+      ```
+    - Function to generate random whole numbers
+
+      ```js
+      function getRandomNumber(){
+          return String.fromCharCode(Math.floor(Math.random() * 10) + 48)
+      }
+      ```
+    - Function to generate random symbols
+    
+      ```js
+      function getRandomSymbol(){
+         const symbols = '!@#$%^&*(){}[]+<>/,.'
+         return symbols[Math.floor(Math.random() * symbols.length)]
+      }
+      ```
 
 
 
