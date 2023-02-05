@@ -379,7 +379,7 @@ function isEligible(event) {
 ```
 Check your console.
 
-Step 24: Try creating a function to check the eligibility criteria for marriage in India (If rural community is checked, age can be 2 years less).
+- Step 24: Try creating a function to check the eligibility criteria for marriage in India (If rural community is checked, age can be 2 years less).
 
 ```js
 function isEligible(event) {
@@ -471,13 +471,194 @@ function isEligible(event) {
       }
       ```
     - Function to generate random symbols
-    
+
       ```js
       function getRandomSymbol(){
          const symbols = '!@#$%^&*(){}[]+<>/,.'
          return symbols[Math.floor(Math.random() * symbols.length)]
       }
       ```
+    
+- Step 28: Create a new folder Password Generator. Inside that folder, create three files - 
+
+   - html file
+   - css file (link your css file to your html page)
+   - js file (link your script file to your html page)
+
+
+Update the html file to create a mock like the below image.
+
+![](./images/image5.PNG)
+
+```html
+<div class="container">
+        <h2>Password Generator</h2>
+        <div class="result-container">
+            <span id="result"></span>
+                <button class="btn" id="clipboard">
+                    <i class="fa fa-clipboard"></i>
+                </button>
+        </div>
+        <div class="settings">
+            <div class="setting">
+                <label>Password Length</label>
+                <input type="number" id="length" min="4" max="20" value="20">
+            </div>
+            <div class="setting">
+                <label>Include uppercase letters</label>
+                <input type="checkbox" id="uppercase" checked>
+            </div>
+            <div class="setting">
+                <label>Include lowercase letters</label>
+                <input type="checkbox" id="lowercase" checked>
+            </div>
+            <div class="setting">
+                <label>Include numbers</label>
+                <input type="checkbox" id="numbers" checked>
+            </div>
+            <div class="setting">
+                <label>Include symbols</label>
+                <input type="checkbox" id="symbols" checked>
+            </div>
+        </div>
+        <button class="btn btn-large" id="generate">
+            Generate Password
+        </button>
+    </div>
+```
+
+- Step 29: Trying adding some styles to the body and h2 element so that it will be center aligned.
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #3b3b98;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+h2{
+    margin: 10px 0 20px;
+    text-align: center;
+}
+```
+
+- Step 30: Try giving box-shadow, padding of 20px, width of 350px and max-width of 100% to your main container.
+
+```css
+.container{
+    background-color: #23235b;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    width: 350px;
+    max-width: 100%;
+}
+```
+
+- Step 31: Try adding some styles to your result container, buttons and input elements so that your output will look like the below image.
+
+![](./images/image6.PNG)
+
+```css
+.result-container{
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding: 12px 10px;
+    height: 50px;
+    width: 100%;
+}
+
+
+.result-container #result{
+    word-wrap: break-word;
+    max-width: calc(100% - 40px);
+}
+
+.result-container .btn{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+}
+
+.btn{
+    border: none;
+    background-color: #3b3b98;
+    color: white;
+    font-size: 16px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.btn-large{
+    display: block;
+    width: 100%;
+}
+
+.setting{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+}
+```
+
+- Step 32: Try getting all the html elements in js (using getElementById).
+
+```js
+const resultEl = document.getElementById('result')
+const lengthEl = document.getElementById('length')
+const uppercaseEl = document.getElementById('uppercase')
+const lowercaseEl = document.getElementById('lowercase')
+const numbersEl = document.getElementById('numbers')
+const symbolsEl = document.getElementById('symbols')
+const generateEl = document.getElementById('generate')
+const clipboardEl = document.getElementById('clipboard')
+```
+
+- Step 33: Copy and paste the four random functions that we have created in the js file. ( getRandomLower(), getRandomUpper(), getRandomNumber(), getRandomSymbol() )
+
+- Step 34: Try adding addEventListener method on click of generate password button.
+
+In the function of addEventListener method, try getting the values of all the input fields and pass all those values in the generate password method as arguments.
+
+```js
+generateEl.addEventListener("click", () => {
+    const length = +lengthEl.value
+    const hasLower = lowercaseEl.checked
+    const hasUpper = uppercaseEl.checked
+    const hasNumber = numbersEl.checked
+    const hasSymbol = symbolsEl.checked
+
+    resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber,hasSymbol,length)
+})
+```
+
+
+
+
+
+
+
+
 
 
 
