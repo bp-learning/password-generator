@@ -285,6 +285,131 @@ function myFunction() {
 - addEventListener is also a Higher Order Function,
 - myFunction passed in the addEventListner is a callback function.
 
+- Step 22: **Getting values of various form inputs(text, checkbox, select) through js.**
+
+   Try creating a simple form like the below image:
+
+   ![](./image3.PNG)
+
+   ```html
+    <form id="form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" min="1 max="100" required>
+        <label for="gender">Gender</label>
+        <select name="gender" id="gender" required>
+            <option value="male">M</option>
+            <option value="female">F</option>
+        </select>
+        <div>
+            <label for="rural">Rural community</label>
+            <input type="checkbox" id="rural">
+        </div>
+        <button type="submit" id="submit">Submit</button>      
+    </form>  
+     <p id="para"></p>
+   ```
+   ```css
+   body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    }
+    
+    form{
+        background-color: antiquewhite;
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        height: 200px;
+        padding: 50px;
+    }
+    
+    input,select{
+        margin-bottom: 10px;
+        border: none;
+        padding: 5px;
+        font-size: medium;
+    }
+    
+    label{
+        font-size: larger;
+        color: rgb(103, 38, 133);;
+    }
+    
+    input[type="checkbox"]
+    {
+        vertical-align:middle;
+    }
+    button{
+        border-radius: 5px;
+        border: 2px solid rgb(103, 38, 133);
+        width: 80px;
+        font-size: medium;
+        padding: 2px;
+        font-weight: bold;
+        color:rgb(103, 38, 133); 
+        background-color: rgb(248, 245, 248);
+    }
+    
+    p{
+        margin-top: 50px;
+        font-size: larger;
+    }
+
+   ```
+- Step 23: Try getting the values of form input fields on submit.
+
+```js
+const form = document.getElementById("form");
+const para = document.getElementById("para");
+
+form.addEventListener('submit', isEligible);
+
+function isEligible(event) {
+    event.preventDefault()
+    const age = this.elements.age.value;
+    const gender = this.elements.gender.value;
+    const checked = this.elements.rural.checked; 
+    console.log(age,gender,checked);
+}
+```
+Check your console.
+
+Step 24: Try creating a function to check the eligibility criteria for marriage in India (If rural community is checked, age can be 2 years less).
+
+```js
+function isEligible(event) {
+    event.preventDefault()
+    const age = this.elements.age.value;
+    const gender = this.elements.gender.value;
+    const checked = this.elements.rural.checked; 
+
+    let value =""; 
+
+    if(age>=18 && gender == "female"){
+        value = "You are eligible!";
+    }else if(age>=21 && gender == "male"){
+        value = "You are eligible!"
+    }else if(checked && (age>=16 && gender == "female")){
+        value = "You are eligible!"
+    }else if(checked && (age>=19 && gender == "male")){
+        value = "You are eligible!"
+    }else{
+        value = "Not Eligible!"
+    }   
+
+    para.innerHTML = value;
+}
+```
+![](./image4.PNG)
+
+- Step 25: Generating Random Numbers in javascript
+
+
 
 
 
