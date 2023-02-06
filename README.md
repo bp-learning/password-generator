@@ -366,14 +366,17 @@ function myFunction() {
 ```js
 const form = document.getElementById("form");
 const para = document.getElementById("para");
+const ageEl = document.getElementById("age");
+const genderEl = document.getElementById("gender");
+const ruralEl = document.getElementById("rural");
 
 form.addEventListener('submit', isEligible);
 
 function isEligible(event) {
     event.preventDefault()
-    const age = this.elements.age.value;
-    const gender = this.elements.gender.value;
-    const checked = this.elements.rural.checked; 
+    const age = ageEl.value;
+    const gender = genderEl.value;
+    const checked = ruralEl.checked;  
     console.log(age,gender,checked);
 }
 ```
@@ -460,14 +463,14 @@ function isEligible(event) {
 
       ```js
       function getRandomUpper(){
-          return String.fromCharCode(Math.floor(Math.random() * 26) + 65)
+          return // random uppercase letters
       }
       ```
     - Function to generate random whole numbers
 
       ```js
       function getRandomNumber(){
-          return String.fromCharCode(Math.floor(Math.random() * 10) + 48)
+          return // random numbers
       }
       ```
     - Function to generate random symbols
@@ -475,7 +478,7 @@ function isEligible(event) {
       ```js
       function getRandomSymbol(){
          const symbols = '!@#$%^&*(){}[]+<>/,.'
-         return symbols[Math.floor(Math.random() * symbols.length)]
+         return // random symbols
       }
       ```
     
@@ -621,15 +624,10 @@ h2{
 }
 ```
 
-- Step 32: Try getting all the html elements in js (using getElementById).
+- Step 32: Try getting the result, generate and clipboard element in js (using getElementById).
 
 ```js
 const resultEl = document.getElementById('result')
-const lengthEl = document.getElementById('length')
-const uppercaseEl = document.getElementById('uppercase')
-const lowercaseEl = document.getElementById('lowercase')
-const numbersEl = document.getElementById('numbers')
-const symbolsEl = document.getElementById('symbols')
 const generateEl = document.getElementById('generate')
 const clipboardEl = document.getElementById('clipboard')
 ```
@@ -638,18 +636,44 @@ const clipboardEl = document.getElementById('clipboard')
 
 - Step 34: Try adding addEventListener method on click of generate password button.
 
-In the function of addEventListener method, try getting the values of all the input fields and pass all those values in the generate password method as arguments.
+In the addEventListener method, give generatePasswordHandler as a callback function.
+
+- Step 35: Creat generatePasswordHandler function. In the function, try to get the length, uppercase, lowercase, numbers and symbol elements in js (using getElementById). Then try to get the values of each input field.
 
 ```js
-generateEl.addEventListener("click", () => {
+const generatePasswordHandler = () => {
+    const lengthEl = document.getElementById('length')
+    //...
     const length = +lengthEl.value
-    const hasLower = lowercaseEl.checked
-    const hasUpper = uppercaseEl.checked
-    const hasNumber = numbersEl.checked
-    const hasSymbol = symbolsEl.checked
+    //...
 
-    resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber,hasSymbol,length)
-})
+    resultEl.innerText = generatePassword(hasLower,hasUpper, hasNumber,hasSymbol,length)
+}
+```
+
+- Step 36: Create function generatePassword.
+
+ In the function create one variable generatedPassword and give it a value of an empty string.
+
+Using conditional statement, try checking the values of each checkbox and if the value is true then add the string to the generatedPassword variable. At last return the string generatedPassword.
+
+```js
+function generatePassword(lower, upper, number, symbol, length){
+    let generatedPassword = '';
+    console.log(lower,upper,number,symbol)
+
+    if (lower || upper || number || symbol){
+
+        while(generatedPassword.length < length) {
+            if(lower) generatedPassword += getRandomLower();
+            if(upper) //...
+            if(number) //...
+            if(symbol) //...
+        }
+    }
+    
+    return generatedPassword;
+}
 ```
 
 
