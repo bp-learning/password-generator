@@ -676,6 +676,35 @@ function generatePassword(lower, upper, number, symbol, length){
 }
 ```
 
+- Step 37: Try adding addEventListener method on click of clipboard element and pass copyToClipboard as a callback function.
+
+- Step 38: Try Creating copyToClipboard function:
+
+Copy a text in clipboard using javascript.
+```js
+const copyToClipboard = () => {
+  // Get the text to be copied in a textarea
+  // Use document.getElementById() method to capture the value
+  //...
+  
+  // Check if the password is empty or not, if it is empty do not return anything
+    const password = resultEl.innerText
+    if(!password){return}
+
+  //Append the textarea element to the body 
+     document.body.appendChild(textarea)
+
+  // Select the text field using element.select() method
+  //...
+  // Copy the text using the document.execCommand(“copy”)
+  //...
+  // Remove the text using element.remove() method.
+  //...
+    alert("Password copied to clipboard!");
+}
+```
+
+**Congratulations, you have successfully completed the Password Generator Project!**
 
 
 
