@@ -706,13 +706,3 @@ const copyToClipboard = () => {
 
 **Congratulations, you have successfully completed the Password Generator Project!**
 
-
-
-
-
-
-
-
-
-
-
