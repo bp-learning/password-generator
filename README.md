@@ -22,7 +22,7 @@ You can use [VS Code](https://code.visualstudio.com/) also.
             <button class="item">2</button>
             <button class="item">3</button>
         </div>
-        // similarly create two more btn-container
+        // similarly create two more div elements with class btn-container
     </div>
     <p id="para"></p>
 ```
