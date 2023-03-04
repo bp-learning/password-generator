@@ -22,16 +22,7 @@ You can use [VS Code](https://code.visualstudio.com/) also.
             <button class="item">2</button>
             <button class="item">3</button>
         </div>
-        <div class="btn-container"> 
-            <button class="item">4</button>
-            <button class="item">5</button>
-            <button class="item">6</button>
-        </div>
-        <div class="btn-container"> 
-            <button class="item">7</button>
-            <button class="item">8</button>
-            <button class="item">9</button>
-        </div>
+        // similarly create two more btn-container
     </div>
     <p id="para"></p>
 ```
@@ -295,8 +286,7 @@ function myFunction() {
     <form id="form">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required>
-        <label for="age">Age</label>
-        <input type="number" id="age" name="age" min="1 max="100" required>
+        // create input element for age
         <label for="gender">Gender</label>
         <select name="gender" id="gender" required>
             <option value="male">M</option>
@@ -365,10 +355,7 @@ function myFunction() {
 
 ```js
 const form = document.getElementById("form");
-const para = document.getElementById("para");
-const ageEl = document.getElementById("age");
-const genderEl = document.getElementById("gender");
-const ruralEl = document.getElementById("rural");
+// similarly try getting para, ageEl, genderEl and ruralEl using getElementById
 
 form.addEventListener('submit', isEligible);
 
@@ -387,9 +374,9 @@ Check your console.
 ```js
 function isEligible(event) {
     event.preventDefault()
-    const age = this.elements.age.value;
-    const gender = this.elements.gender.value;
-    const checked = this.elements.rural.checked; 
+    const age = ageEl.value;
+    const gender = genderEl.value;
+    const checked = ruralEl.checked;
 
     let value =""; 
 
@@ -511,18 +498,9 @@ Update the html file to create a mock like the below image.
                 <label>Include uppercase letters</label>
                 <input type="checkbox" id="uppercase" checked>
             </div>
-            <div class="setting">
-                <label>Include lowercase letters</label>
-                <input type="checkbox" id="lowercase" checked>
-            </div>
-            <div class="setting">
-                <label>Include numbers</label>
-                <input type="checkbox" id="numbers" checked>
-            </div>
-            <div class="setting">
-                <label>Include symbols</label>
-                <input type="checkbox" id="symbols" checked>
-            </div>
+            
+            // similarly create three more div elements for lowercase, numbers and symbols
+           
         </div>
         <button class="btn btn-large" id="generate">
             Generate Password
@@ -628,8 +606,7 @@ h2{
 
 ```js
 const resultEl = document.getElementById('result')
-const generateEl = document.getElementById('generate')
-const clipboardEl = document.getElementById('clipboard')
+//...
 ```
 
 - Step 33: Copy and paste the four random functions that we have created in the js file. ( getRandomLower(), getRandomUpper(), getRandomNumber(), getRandomSymbol() )
